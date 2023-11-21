@@ -9,8 +9,9 @@
   transition: opacity 0.5s ease-in-out;
   position: absolute;
   top: 0;
-  transform: translateY(-50%);
   background-color: #242424;
+
+  opacity: 1;
 }
 
 .questionContainer h2 {
@@ -52,5 +53,7 @@
 }
 
 .fadeAway {
-  display: none;
+  opacity: 0;
+  transform: translateY(-300%);
+  transition: opacity 0.25s, transform 0.5s;
 }
