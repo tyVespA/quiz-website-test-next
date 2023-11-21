@@ -1,36 +1,25 @@
 "use client";
 import React from "react";
+import { useState } from "react";
 import styles from "./Question.module.css";
 
-export default function Question({
-  question,
-  options,
-  score,
-  setScore,
-  isVisible,
-  onNextQuestion,
-}) {
-  const handleOptionClick = (optionScore) => {
-    setScore(score + optionScore);
-    onNextQuestion();
-  };
+export default function Question({ question, options, score, setScore }) {
+  const [submitted, setSubmitted] = useState(false);
+  function handleSubmit(e) {
+    e.preventDefault();
+    setSubmitted(true);
+  }
 
   return (
     <div
       className={`${styles.questionContainer} ${
-        isVisible ? "" : styles["question-hidden"]
+        submitted ? styles.fadeAway : ""
       }`}
     >
       <h2>{question}</h2>
-      <form
-        action=""
-        className={styles.form}
-        onSubmit={(e) => {
-          e.preventDefault();
-        }}
-      >
+      <form action="" className={styles.form} onSubmit={handleSubmit}>
         {options.map((option, index) => (
-          <button key={index} onClick={() => handleOptionClick(option.score)}>
+          <button key={index} onClick={() => setScore(score + option.score)}>
             {option.label}
           </button>
         ))}
