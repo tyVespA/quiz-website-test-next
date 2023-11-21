@@ -1,3 +1,10 @@
+import Question from "./components/Question";
+import styles from "./page.module.css";
+
 export default function Home() {
-  return <div>hi</div>;
+  return (
+    <main className={styles.main}>
+      <Question />
+    </main>
+  );
 }
