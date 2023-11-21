@@ -4,6 +4,7 @@ import { useState } from "react";
 import styles from "./Quiz.module.css";
 import Question from "./Question";
 import { questions } from "../assets/questions";
+import ScoreScreen from "./ScoreScreen";
 
 export default function Quiz() {
   const [score, setScore] = useState(0);
@@ -23,7 +24,7 @@ export default function Quiz() {
 
       <div>
         <br />
-        <p>Score: {score}</p>
+        <ScoreScreen score={score} />
       </div>
     </div>
   );
