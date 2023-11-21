@@ -1,11 +1,26 @@
 "use client";
 import React from "react";
-import { useState } from "react";
 import styles from "./Question.module.css";
 
-export default function Question({ question, options, score, setScore }) {
+export default function Question({
+  question,
+  options,
+  score,
+  setScore,
+  isVisible,
+  onNextQuestion,
+}) {
+  const handleOptionClick = (optionScore) => {
+    setScore(score + optionScore);
+    onNextQuestion();
+  };
+
   return (
-    <div className={styles.questionContainer}>
+    <div
+      className={`${styles.questionContainer} ${
+        isVisible ? "" : styles["question-hidden"]
+      }`}
+    >
       <h2>{question}</h2>
       <form
         action=""
@@ -15,7 +30,7 @@ export default function Question({ question, options, score, setScore }) {
         }}
       >
         {options.map((option, index) => (
-          <button key={index} onClick={() => setScore(score + option.score)}>
+          <button key={index} onClick={() => handleOptionClick(option.score)}>
             {option.label}
           </button>
         ))}
