@@ -3,9 +3,7 @@ import React from "react";
 import { useState } from "react";
 import styles from "./Question.module.css";
 
-export default function Question({ question, options }) {
-  const [score, setScore] = useState(0);
-
+export default function Question({ question, options, score, setScore }) {
   return (
     <div className={styles.questionContainer}>
       <h2>{question}</h2>
@@ -14,11 +12,10 @@ export default function Question({ question, options }) {
         className={styles.form}
         onSubmit={(e) => {
           e.preventDefault();
-          console.log("Score:", score);
         }}
       >
         {options.map((option, index) => (
-          <button key={index} onClick={() => setScore(option.score)}>
+          <button key={index} onClick={() => setScore(score + option.score)}>
             {option.label}
           </button>
         ))}
