@@ -1,19 +1,16 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
+import { useState } from "react";
+import styles from "./Quiz.module.css";
 import Question from "./Question";
 import { questions } from "../assets/questions";
+import ScoreScreen from "./ScoreScreen";
 
 export default function Quiz() {
   const [score, setScore] = useState(0);
 
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-
-  const handleNextQuestion = () => {
-    setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
-  };
-
   return (
-    <div>
+    <div className={styles.quizContainer}>
       {questions.map((question, index) => (
         <Question
           key={index}
@@ -21,14 +18,13 @@ export default function Quiz() {
           options={question.options}
           score={score}
           setScore={setScore}
-          isVisible={index === currentQuestionIndex}
-          onNextQuestion={handleNextQuestion}
+          zIndex={50 - index}
         />
       ))}
 
       <div>
         <br />
-        {currentQuestionIndex === questions.length ? <p>Score: {score}</p> : ""}
+        <ScoreScreen score={score} />
       </div>
     </div>
   );

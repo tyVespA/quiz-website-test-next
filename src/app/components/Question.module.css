@@ -7,6 +7,11 @@
 
   opacity: 1;
   transition: opacity 0.5s ease-in-out;
+  position: absolute;
+  top: 0;
+  background-color: #242424;
+
+  opacity: 1;
 }
 
 .questionContainer h2 {
@@ -47,7 +52,8 @@
   background-color: black;
 }
 
-.question-hidden {
+.fadeAway {
   opacity: 0;
-  display: none;
+  transform: translateY(-300%);
+  transition: opacity 0.15s, transform 0.5s;
 }
