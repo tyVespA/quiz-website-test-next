@@ -55,5 +55,5 @@
 .fadeAway {
   opacity: 0;
   transform: translateY(-300%);
-  transition: opacity 0.25s, transform 0.5s;
+  transition: opacity 0.15s, transform 0.5s;
 }
