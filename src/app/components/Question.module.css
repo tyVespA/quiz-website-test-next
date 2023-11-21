@@ -1,0 +1,45 @@
+.questionContainer {
+  border: 1px solid white;
+  border-radius: 24px;
+  padding: 45px 55px;
+
+  text-align: center;
+}
+
+.questionContainer h2 {
+  position: relative;
+  margin-bottom: 80px;
+}
+
+.questionContainer h2::after {
+  position: absolute;
+  content: "";
+  width: 50px;
+  height: 1px;
+  bottom: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+}
+
+.form {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.form button {
+  border: 1px solid white;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 12px;
+  transition: all 0.2s;
+}
+
+.form button:hover {
+  background-color: black;
+}
