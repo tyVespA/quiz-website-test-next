@@ -17,6 +17,7 @@ export default function Quiz() {
           options={question.options}
           score={score}
           setScore={setScore}
+          zIndex={50 - index}
         />
       ))}
 
