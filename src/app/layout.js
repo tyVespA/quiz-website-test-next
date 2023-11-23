@@ -2,18 +2,10 @@ import localFont from "next/font/local";
 import "./globals.css";
 
 const myFont = localFont({
-  src: "./font/Product-Sans-Regular.ttf",
-  display: "swap",
-});
-
-const myFontRegular = localFont({
-  src: "./font/Product-Sans-Regular.ttf",
-  display: "swap",
-});
-
-const myFontBold = localFont({
-  src: "./font/Product-Sans-Bold.ttf",
-  display: "swap",
+  src: [
+    { path: "./font/Product-Sans-Regular.ttf", weight: "400", style: "normal" },
+    { path: "./font/Product-Sans-Bold.ttf", weight: "700", style: "bold" },
+  ],
 });
 
 export const metadata = {
@@ -24,9 +16,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${myFont.className} ${myFontBold.className}`}>
-        {children}
-      </body>
+      <body className={myFont.className}>{children}</body>
     </html>
   );
 }
