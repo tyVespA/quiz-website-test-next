@@ -1,3 +1,8 @@
+.headerContainer {
+  border-bottom: 1px solid var(--grey);
+  background-color: var(--darkerGrey);
+}
+
 .header {
   max-width: 1100px;
   margin-inline: auto;
@@ -16,7 +21,7 @@
 }
 
 .logo img {
-  transition: all ease-out 1s;
+  transition: all ease-out 0.5s;
 }
 
 .logo:hover img {
