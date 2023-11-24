@@ -1,0 +1,36 @@
+.testCardContainer {
+  width: 350px;
+  height: 320px;
+  /* border: 1px solid var(--white); */
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: var(--darkGrey);
+  color: var(--white);
+}
+
+.imageContainer {
+  height: 150px;
+  position: relative;
+  overflow: hidden;
+}
+
+.imageContainer img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.textContainer {
+  padding: 20px 30px;
+}
+
+.textContainer h3,
+.textContainer p {
+  padding-bottom: 5px;
+}
+
+.textContainer h3:hover,
+.textContainer a:hover {
+  text-decoration: underline;
+}
