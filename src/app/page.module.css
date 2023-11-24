@@ -4,3 +4,53 @@
   align-items: center;
   height: calc(100vh - 120px);
 }
+
+.pageContainer {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding: 30px 40px;
+}
+
+.main {
+  padding-top: 50px;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pageContainer h1,
+.pageContainer h2 {
+  line-height: 1.25;
+  padding-bottom: 25px;
+}
+
+.hero p {
+  max-width: 45ch;
+  font-size: 1.2rem;
+  padding-bottom: 30px;
+}
+
+/* SECOND SECTION */
+
+.sectionTests {
+  padding-top: 100px;
+}
+
+.sectionTests h2 {
+  /* font-size: 30px; */
+  font-size: 1.8rem;
+  text-align: center;
+  padding-bottom: 50px;
+}
+
+.testsContainer {
+  max-width: 800px;
+  margin-inline: auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 50px;
+}
