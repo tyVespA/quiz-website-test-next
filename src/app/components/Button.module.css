@@ -1,8 +1,14 @@
 .btn {
   font-size: 1.1rem;
   background-color: var(--white);
-  color: #1f1f1f;
+  color: var(--darkerGrey);
   border: transparent;
   padding: 15px 20px;
   border-radius: 100px;
+  transition: all 0.3s;
+}
+
+.btn:hover {
+  background-color: var(--darkGrey);
+  color: var(--white);
 }
