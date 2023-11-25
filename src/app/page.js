@@ -44,7 +44,7 @@ export default function Home() {
             <TestCard
               imageName={"erobb-pain.gif"}
               alt={"man drinking"}
-              title={"Do you think you might be a degenerate?"}
+              title={"Am I a weeb?"}
               description={"Find out if you're a disgrace to society."}
             />
             <TestCard

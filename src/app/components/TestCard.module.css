@@ -1,6 +1,6 @@
 .testCardContainer {
   width: 350px;
-  height: 320px;
+  /* height: 320px; */
   /* border: 1px solid var(--white); */
   border-radius: 8px;
   overflow: hidden;
@@ -22,7 +22,7 @@
 }
 
 .textContainer {
-  padding: 20px 30px;
+  padding: 20px 30px 25px 30px;
 }
 
 .textContainer h3,
