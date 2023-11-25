@@ -42,15 +42,15 @@ export default function Home() {
               description={"Find out if you're a disgrace to society."}
             />
             <TestCard
-              imageName={"erobb-pain.gif"}
+              imageName={"weebCardImg.jpg"}
               alt={"man drinking"}
-              title={"Am I a weeb?"}
+              title={"Am I a Weeb?"}
               description={"Find out if you're a disgrace to society."}
             />
             <TestCard
-              imageName={"erobb-pain.gif"}
+              imageName={"cuckholdCardImg.jpg"}
               alt={"man drinking"}
-              title={"Am I a cuck?"}
+              title={"Am I a Cuck?"}
               description={"Find out if you're a disgrace to society."}
             />
           </div>
