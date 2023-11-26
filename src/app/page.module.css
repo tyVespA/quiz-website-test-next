@@ -8,11 +8,11 @@
 .pageContainer {
   max-width: 1200px;
   margin-inline: auto;
-  padding: 30px 40px;
+  /* padding: 30px 40px; */
 }
 
 .main {
-  padding-top: 50px;
+  /* padding-top: 50px; */
 }
 
 .hero {

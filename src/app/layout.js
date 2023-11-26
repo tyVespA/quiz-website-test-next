@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={myFont.className}>
         <Header />
-        {children}
+        <div className="bodyGlobal">{children}</div>
       </body>
     </html>
   );
