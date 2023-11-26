@@ -15,7 +15,7 @@ export default function page() {
           type="radio"
           name="answer"
           id="answer1"
-          value={"answer1"}
+          value={answer}
           onChange={(event) => {
             setAnswer(event.target.value);
           }}
@@ -26,7 +26,7 @@ export default function page() {
           type="radio"
           name="answer"
           id="answer2"
-          value={"answer2"}
+          value={answer}
           onChange={(event) => {
             setAnswer(event.target.value);
           }}

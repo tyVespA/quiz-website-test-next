@@ -55,7 +55,7 @@ export default function Home() {
               alt={"man drinking"}
               title={"Am I a Cuck?"}
               description={"Find out if you're a disgrace to society."}
-              href={""}
+              href={"Cuck-Test"}
             />
           </div>
         </section>
