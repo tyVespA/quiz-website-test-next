@@ -41,18 +41,21 @@ export default function Home() {
               alt={"man drinking"}
               title={"Am I a Degenerate?"}
               description={"Find out if you're a disgrace to society."}
+              href={"Degenerate-Test"}
             />
             <TestCard
               imageName={"weebCardImg.jpg"}
               alt={"man drinking"}
               title={"Am I a Weeb?"}
               description={"Find out if you're a disgrace to society."}
+              href={""}
             />
             <TestCard
               imageName={"cuckholdCardImg.jpg"}
               alt={"man drinking"}
               title={"Am I a Cuck?"}
               description={"Find out if you're a disgrace to society."}
+              href={""}
             />
           </div>
         </section>

@@ -3,18 +3,20 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./TestCard.module.css";
 
-export default function TestCard({ imageName, alt, title, description }) {
+export default function TestCard({ imageName, alt, title, description, href }) {
   return (
     <div className={styles.testCardContainer}>
-      <div className={styles.imageContainer}>
-        <img src={`/images/${imageName}`} alt={alt} />
-      </div>
+      <Link href={`/${href}`}>
+        <div className={styles.imageContainer}>
+          <img src={`/images/${imageName}`} alt={alt} />
+        </div>
+      </Link>
       <div className={styles.textContainer}>
-        <Link href={"/"}>
+        <Link href={`/${href}`}>
           <h3>{title}</h3>
         </Link>
         <p>{description}</p>
-        <Link href={"/"}>Take the test →</Link>
+        <Link href={`/${href}`}>Take the test →</Link>
       </div>
     </div>
   );
