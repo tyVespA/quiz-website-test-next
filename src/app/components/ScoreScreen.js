@@ -17,7 +17,7 @@ export default function ScoreScreen({ score }) {
   }, [score]);
 
   return (
-    <div>
+    <div className={styles.scoreScreen}>
       <h2>{`You scored ${score}/10`}</h2>
       <h2>{result}</h2>
     </div>

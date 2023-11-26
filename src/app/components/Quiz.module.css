@@ -1,8 +1,7 @@
 .quizContainer {
   position: relative;
+  margin-inline: auto;
   width: 700px;
   height: 330px;
-  display: flex;
-  justify-content: center;
   text-align: center;
 }
