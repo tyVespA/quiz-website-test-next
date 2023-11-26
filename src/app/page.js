@@ -48,7 +48,7 @@ export default function Home() {
               alt={"man drinking"}
               title={"Am I a Weeb?"}
               description={"Find out if you're a disgrace to society."}
-              href={""}
+              href={"Weeb-Test"}
             />
             <TestCard
               imageName={"cuckholdCardImg.jpg"}
