@@ -4,7 +4,7 @@ import Quiz from "../components/Quiz";
 
 export default function page() {
   return (
-    <div className={styles.page}>
+    <div className="test-page">
       <h1>Am I a Degenerate?</h1>
       <Quiz />
     </div>

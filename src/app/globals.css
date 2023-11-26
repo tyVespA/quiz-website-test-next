@@ -68,3 +68,7 @@ button {
 .bodyGlobal {
   padding: 80px 40px;
 }
+
+.test-page h1 {
+  text-align: center;
+}
