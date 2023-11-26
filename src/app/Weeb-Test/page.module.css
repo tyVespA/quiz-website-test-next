@@ -2,7 +2,43 @@
   margin-inline: auto;
 }
 
+.weebTest h1 {
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.weebTest h1::after {
+  position: absolute;
+  content: "";
+  width: 100px;
+  height: 1px;
+  background-color: var(--white);
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .weebTest form {
   width: 400px;
   margin-inline: auto;
+  accent-color: #1f1f1f;
+
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
+
+.weebTest label {
+  display: flex;
+  gap: 5px;
+}
+
+.weebTest form input[type="radio"] {
+  background-color: transparent;
+  border: transparent;
+}
+
+/* .weebTest form  {
+  appearance: none;
+  margin: 0;
+} */
