@@ -1,0 +1,14 @@
+.form form {
+  width: 400px;
+  margin-inline: auto;
+  accent-color: #1f1f1f;
+
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form label {
+  display: flex;
+  gap: 5px;
+}
