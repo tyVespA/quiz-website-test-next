@@ -5,24 +5,23 @@ import { useState } from "react";
 
 export default function FadeInRadio({ testName, questionIndex }) {
   const [answer, setAnswer] = useState("");
-  const [score, setScore] = useState(0);
 
   return (
     <div className="radioForm">
       <form action="">
         <h2>{testName[questionIndex].question}</h2>
-        {testName[questionIndex].answers.map((answer, index, points) => (
+        {testName[questionIndex].answers.map((option, index) => (
           <label key={index} htmlFor={`answer${index}`}>
             <input
               type="radio"
               name={"answer"}
               id={`answer${index}`}
-              value={answer.label}
+              value={option.label}
               onChange={(event) => {
                 setAnswer(event.target.value);
               }}
             />
-            {answer.label}
+            {option.label}
           </label>
         ))}
       </form>
