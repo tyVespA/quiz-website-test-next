@@ -3,7 +3,12 @@ import React from "react";
 import styles from "./RadioQuestion.module.css";
 import { useState } from "react";
 
-export default function FadeInRadio({ testName, questionIndex }) {
+export default function FadeInRadio({
+  testName,
+  questionIndex,
+  score,
+  setScore,
+}) {
   const [answer, setAnswer] = useState("");
 
   return (
