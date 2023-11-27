@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import styles from "./FadeInRadio.module.css";
+import styles from "./RadioQuestion.module.css";
 import { useState } from "react";
 
 export default function FadeInRadio({ testName, questionIndex }) {
