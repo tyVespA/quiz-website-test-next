@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./page.module.css";
-import Quiz from "../components/Quiz";
+import Quiz from "../components/quizTypes/Quiz";
 
 export default function page() {
   return (

@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./page.module.css";
-import Question from "./components/Question";
-import Quiz from "./components/Quiz";
+import Question from "./components/quizTypes/Question";
+import Quiz from "./components/quizTypes/Quiz";
 import Button from "./components/Button";
 import TestCard from "./components/TestCard";
 

@@ -3,8 +3,8 @@ import React from "react";
 import { useState } from "react";
 import styles from "./Quiz.module.css";
 import Question from "./Question";
-import { questions } from "../assets/questions";
-import ScoreScreen from "./ScoreScreen";
+import { questions } from "../../assets/questions";
+import ScoreScreen from "../ScoreScreen";
 
 export default function Quiz() {
   const [score, setScore] = useState(0);
