@@ -22,7 +22,7 @@ export default function RadioQuestion() {
   ];
 
   return (
-    <div className={styles.form}>
+    <div className="radioForm">
       <form action="">
         {weebTest.map((question, index) => (
           <div key={index}>
