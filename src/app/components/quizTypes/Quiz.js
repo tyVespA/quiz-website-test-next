@@ -3,7 +3,7 @@ import React from "react";
 import { useState } from "react";
 import styles from "./Quiz.module.css";
 import Question from "./Question";
-import { questions } from "../../assets/questions";
+import { degenQuestions } from "../../assets/degenQuestions";
 import ScoreScreen from "../ScoreScreen";
 
 export default function Quiz() {
@@ -11,7 +11,7 @@ export default function Quiz() {
 
   return (
     <div className={styles.quizContainer}>
-      {questions.map((question, index) => (
+      {degenQuestions.map((question, index) => (
         <Question
           key={index}
           question={question.question}

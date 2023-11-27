@@ -1,4 +1,4 @@
-export const questions = [
+export const degenQuestions = [
   {
     question: "How do you feel about anime?",
     options: [
