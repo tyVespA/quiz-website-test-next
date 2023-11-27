@@ -37,7 +37,7 @@ export default function Home() {
           <h2>Our Tests</h2>
           <div className={styles.testsContainer}>
             <TestCard
-              imageName={"erobb-pain.gif"}
+              imageName={"degen2.jpg"}
               alt={"man drinking"}
               title={"Am I a Degenerate?"}
               description={"Find out if you're a disgrace to society."}
