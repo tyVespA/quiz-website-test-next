@@ -65,12 +65,10 @@ button {
   cursor: pointer;
 }
 
+/* GLOBAL CLASSES */
+
 .bodyGlobal {
   padding: 80px 40px;
-}
-
-.test-page h1 {
-  text-align: center;
 }
 
 .radioForm form {
@@ -88,11 +86,8 @@ button {
   gap: 5px;
 }
 
-.radioForm h2 {
-  text-align: center;
-}
-
 .test-page h1 {
+  text-align: center;
   position: relative;
   padding-bottom: 20px;
 }
