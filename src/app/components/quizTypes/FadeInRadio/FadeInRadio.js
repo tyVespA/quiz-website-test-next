@@ -9,7 +9,12 @@ export default function FadeInRadio({ questionIndex }) {
   const weebTest = [
     {
       question: "How often do you watch anime?",
-      answers: ["1", "2", "3", "4"],
+      answers: [
+        { label: "1", points: "0" },
+        { label: "1", points: "0" },
+        { label: "1", points: "0" },
+        { label: "1", points: "0" },
+      ],
     },
     {
       question: "How often do you to hentai?",
@@ -21,18 +26,18 @@ export default function FadeInRadio({ questionIndex }) {
     <div className="radioForm">
       <form action="">
         <h2>{weebTest[questionIndex].question}</h2>
-        {weebTest[questionIndex].answers.map((answer, index) => (
+        {weebTest[questionIndex].answers.map((answer, index, points) => (
           <label key={index} htmlFor={`answer${index}`}>
             <input
               type="radio"
               name={"answer"}
               id={`answer${index}`}
-              value={answer}
+              value={answer.label}
               onChange={(event) => {
                 setAnswer(event.target.value);
               }}
             />
-            {answer}
+            {answer.label}
           </label>
         ))}
       </form>
