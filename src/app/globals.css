@@ -107,3 +107,11 @@ button {
   left: 50%;
   transform: translateX(-50%);
 }
+
+.quiz-container {
+  padding-top: 25px;
+}
+
+.quiz-container > div {
+  padding-bottom: 30px;
+}
