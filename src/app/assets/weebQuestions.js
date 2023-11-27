@@ -1,4 +1,4 @@
-export const weebTest = [
+export const weebQuestions = [
   {
     question: "How often do you watch anime?",
     answers: [
