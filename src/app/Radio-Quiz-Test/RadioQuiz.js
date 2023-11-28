@@ -7,7 +7,7 @@ import styles from "./RadioQuiz.module.css";
 export default function RadioQuiz() {
   // next progression
   const Q1 = {
-    question: "what is the asdjasikdha",
+    question: "1. what is the asdjasikdha",
     answers: [
       { label: "123", score: 2 },
       { label: "zxcbff", score: 1 },
@@ -17,7 +17,7 @@ export default function RadioQuiz() {
   };
 
   const Q2 = {
-    question: "what is the asdjasikdha",
+    question: "2 .what is the asdjasikdha",
     answers: [
       { label: "123", score: 2 },
       { label: "zxcbff", score: 1 },
@@ -32,18 +32,16 @@ export default function RadioQuiz() {
     Q3: 0,
   });
 
-  // function handleSubmit() {
-  //   const scoreQ1 = scores.Q1;
-  //   const scoreQ2 = scores.Q2;
-  // }
+  const [formSubmitted, setFormSubmitted] = useState(false);
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    setFormSubmitted(true);
+  }
 
   return (
     <div className={`quiz-container ${styles.radioQuizTest}`}>
-      <form
-        action=""
-        className={styles.form}
-        // onSubmit={handleSubmit}
-      >
+      <form action="" className={styles.form} onSubmit={handleSubmit}>
         <RadioQuestion
           question={Q1.question}
           answers={Q1.answers}
@@ -67,11 +65,18 @@ export default function RadioQuiz() {
             }
           ></RadioQuestion>
         )}
+        {scores.Q2 > 0 ? (
+          <button type="submit" className={styles.submitBtn}>
+            Calculate Score
+          </button>
+        ) : (
+          ""
+        )}
+        {formSubmitted ? <p>Score: {scores.Q1 + scores.Q2 + scores.Q3}</p> : ""}
       </form>
       <br />
       <p>Score Q1: {scores.Q1}</p>
       <p>Score Q2: {scores.Q2}</p>
-      <p>Score: {scores.Q1 + scores.Q2 + scores.Q3}</p>
     </div>
   );
 }
