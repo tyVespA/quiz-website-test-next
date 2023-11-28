@@ -5,37 +5,73 @@ import RadioQuestion from "./RadioQuestion";
 import styles from "./RadioQuiz.module.css";
 
 export default function RadioQuiz() {
-  const Q1Answers = [
-    { label: "123", score: "2" },
-    { label: "asdasd", score: "1" },
-    { label: "12xzczx3", score: "4" },
-    { label: "sadasd", score: "5" },
-  ];
-  const Q2Answers = [
-    { label: "123", score: "2" },
-    { label: "zxcbff", score: "1" },
-    { label: "12xzczx3", score: "4" },
-    { label: "czxvq123e", score: "5" },
-  ];
+  // next progression
+  const Q1 = {
+    question: "what is the asdjasikdha",
+    answers: [
+      { label: "123", score: 2 },
+      { label: "zxcbff", score: 1 },
+      { label: "12xzczx3", score: 4 },
+      { label: "czxvq123e", score: 5 },
+    ],
+  };
 
-  const [score, setScore] = useState(0);
+  const Q2 = {
+    question: "what is the asdjasikdha",
+    answers: [
+      { label: "123", score: 2 },
+      { label: "zxcbff", score: 1 },
+      { label: "12xzczx3", score: 4 },
+      { label: "czxvq123e", score: 5 },
+    ],
+  };
 
-  function handleSubmit() {
-    // SCORE LOGIC HERE
-  }
+  const [scores, setScores] = useState({
+    Q1: 0,
+    Q2: 0,
+    Q3: 0,
+  });
+
+  // function handleSubmit() {
+  //   const scoreQ1 = scores.Q1;
+  //   const scoreQ2 = scores.Q2;
+  // }
 
   return (
     <div className={`quiz-container ${styles.radioQuizTest}`}>
-      <form action="" className={styles.form} onSubmit={handleSubmit}>
-        <RadioQuestion answers={Q1Answers} name="Q1">
-          1. What&apos;s the better anime asdasdaaaag?
-        </RadioQuestion>
-        <RadioQuestion answers={Q2Answers} name="Q2">
-          1. What&apos;s the better anime asdasdaaaag?
-        </RadioQuestion>
+      <form
+        action=""
+        className={styles.form}
+        // onSubmit={handleSubmit}
+      >
+        <RadioQuestion
+          question={Q1.question}
+          answers={Q1.answers}
+          name="Q1"
+          score={scores.Q1}
+          setScore={(newScore) =>
+            setScores((prevScores) => ({ ...prevScores, Q1: newScore }))
+          }
+        ></RadioQuestion>
+
+        {scores.Q1 <= 0 && <p>Select an answer to display the next question</p>}
+
+        {scores.Q1 > 0 && (
+          <RadioQuestion
+            question={Q2.question}
+            answers={Q2.answers}
+            name="Q2"
+            score={scores.Q2}
+            setScore={(newScore) =>
+              setScores((prevScores) => ({ ...prevScores, Q2: newScore }))
+            }
+          ></RadioQuestion>
+        )}
       </form>
       <br />
-      <p>Score: </p>
+      <p>Score Q1: {scores.Q1}</p>
+      <p>Score Q2: {scores.Q2}</p>
+      <p>Score: {scores.Q1 + scores.Q2 + scores.Q3}</p>
     </div>
   );
 }
