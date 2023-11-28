@@ -18,9 +18,15 @@ export default function RadioQuiz() {
     { label: "czxvq123e", score: "5" },
   ];
 
+  const [score, setScore] = useState(0);
+
+  function handleSubmit() {
+    // SCORE LOGIC HERE
+  }
+
   return (
     <div className={`quiz-container ${styles.radioQuizTest}`}>
-      <form action="" className={styles.form}>
+      <form action="" className={styles.form} onSubmit={handleSubmit}>
         <RadioQuestion answers={Q1Answers} name="Q1">
           1. What&apos;s the better anime asdasdaaaag?
         </RadioQuestion>
@@ -28,6 +34,8 @@ export default function RadioQuiz() {
           1. What&apos;s the better anime asdasdaaaag?
         </RadioQuestion>
       </form>
+      <br />
+      <p>Score: </p>
     </div>
   );
 }
