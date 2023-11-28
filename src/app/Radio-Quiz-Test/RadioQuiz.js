@@ -5,7 +5,6 @@ import RadioQuestion from "./RadioQuestion";
 import styles from "./RadioQuiz.module.css";
 
 export default function RadioQuiz() {
-  // next progression
   const Q1 = {
     question: "1. what is the asdjasikdha",
     answers: [
@@ -33,6 +32,7 @@ export default function RadioQuiz() {
   });
 
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [submitQ1, setSubmitQ1] = useState(false);
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -54,7 +54,11 @@ export default function RadioQuiz() {
 
         {scores.Q1 <= 0 && <p>Select an answer to display the next question</p>}
 
-        {scores.Q1 > 0 && (
+        <div
+          className={`${styles.questionContainer} ${
+            scores.Q1 > 0 ? styles.fadeIn : ""
+          }  `}
+        >
           <RadioQuestion
             question={Q2.question}
             answers={Q2.answers}
@@ -64,19 +68,24 @@ export default function RadioQuiz() {
               setScores((prevScores) => ({ ...prevScores, Q2: newScore }))
             }
           ></RadioQuestion>
-        )}
-        {scores.Q2 > 0 ? (
-          <button type="submit" className={styles.submitBtn}>
-            Calculate Score
-          </button>
-        ) : (
-          ""
-        )}
-        {formSubmitted ? <p>Score: {scores.Q1 + scores.Q2 + scores.Q3}</p> : ""}
+        </div>
+
+        <button
+          type="submit"
+          className={`${styles.submitBtn} ${
+            scores.Q2 > 0 ? styles.fadeIn : ""
+          }`}
+        >
+          Calculate Score
+        </button>
+
+        <p className={`${styles.score} ${formSubmitted ? styles.fadeIn : ""}`}>
+          Score: {scores.Q1 + scores.Q2 + scores.Q3}
+        </p>
       </form>
       <br />
-      <p>Score Q1: {scores.Q1}</p>
-      <p>Score Q2: {scores.Q2}</p>
+      {/* <p>Score Q1: {scores.Q1}</p>
+      <p>Score Q2: {scores.Q2}</p> */}
     </div>
   );
 }
