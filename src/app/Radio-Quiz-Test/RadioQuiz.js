@@ -5,25 +5,26 @@ import RadioQuestion from "./RadioQuestion";
 import styles from "./RadioQuiz.module.css";
 
 export default function RadioQuiz() {
-  const Q1 = {
-    question: "1. what is the asdjasikdha",
-    answers: [
-      { label: "123", score: 2 },
-      { label: "zxcbff", score: 1 },
-      { label: "12xzczx3", score: 4 },
-      { label: "czxvq123e", score: 5 },
-    ],
-  };
-
-  const Q2 = {
-    question: "2 .what is the asdjasikdha",
-    answers: [
-      { label: "123", score: 2 },
-      { label: "zxcbff", score: 1 },
-      { label: "12xzczx3", score: 4 },
-      { label: "czxvq123e", score: 5 },
-    ],
-  };
+  const quiz = [
+    {
+      question: "1. QS",
+      answers: [
+        { label: "qs2", score: 2 },
+        { label: "qs3", score: 1 },
+        { label: "qs4", score: 4 },
+        { label: "qs45", score: 5 },
+      ],
+    },
+    {
+      question: "1. what is the asdjasikdha",
+      answers: [
+        { label: "123", score: 2 },
+        { label: "zxcbff", score: 1 },
+        { label: "12xzczx3", score: 4 },
+        { label: "czxvq123e", score: 5 },
+      ],
+    },
+  ];
 
   const [scores, setScores] = useState({
     Q1: 0,
@@ -43,8 +44,8 @@ export default function RadioQuiz() {
     <div className={`quiz-container ${styles.radioQuizTest}`}>
       <form action="" className={styles.form} onSubmit={handleSubmit}>
         <RadioQuestion
-          question={Q1.question}
-          answers={Q1.answers}
+          question={quiz[0].question}
+          answers={quiz[0].answers}
           name="Q1"
           score={scores.Q1}
           setScore={(newScore) =>
@@ -60,8 +61,8 @@ export default function RadioQuiz() {
           }  `}
         >
           <RadioQuestion
-            question={Q2.question}
-            answers={Q2.answers}
+            question={quiz[1].question}
+            answers={quiz[1].answers}
             name="Q2"
             score={scores.Q2}
             setScore={(newScore) =>
@@ -84,8 +85,8 @@ export default function RadioQuiz() {
         </p>
       </form>
       <br />
-      {/* <p>Score Q1: {scores.Q1}</p>
-      <p>Score Q2: {scores.Q2}</p> */}
+      <p>Score Q1: {scores.Q1}</p>
+      <p>Score Q2: {scores.Q2}</p>
     </div>
   );
 }
