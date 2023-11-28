@@ -5,6 +5,9 @@ import styles from "./RadioQuestion.module.css";
 
 export default function RadioQuestion({ children, answers, name }) {
   const [selectedAnswer, setSelectedAnswer] = useState("");
+  function handleOnChange(event) {
+    setSelectedAnswer(event.target.value);
+  }
 
   return (
     <div>
@@ -16,9 +19,7 @@ export default function RadioQuestion({ children, answers, name }) {
             name={name}
             id={`${answer.label}-${name}`}
             value={answer.label}
-            onChange={(event) => {
-              setSelectedAnswer(event.target.value);
-            }}
+            onChange={handleOnChange}
           />{" "}
           {answer.label}
         </label>
