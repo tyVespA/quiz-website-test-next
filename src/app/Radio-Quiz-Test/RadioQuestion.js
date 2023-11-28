@@ -3,15 +3,35 @@ import React from "react";
 import { useState } from "react";
 import styles from "./RadioQuestion.module.css";
 
-export default function RadioQuestion({ children, answers, name }) {
+export default function RadioQuestion({
+  question,
+  answers,
+  name,
+  score,
+  setScore,
+}) {
   const [selectedAnswer, setSelectedAnswer] = useState("");
+
   function handleOnChange(event) {
-    setSelectedAnswer(event.target.value);
+    //GPT SOLUTION
+    const selectedValue = event.target.value;
+
+    if (selectedValue !== selectedAnswer) {
+      setSelectedAnswer(selectedValue);
+
+      const selectedAnswerObject = answers.find(
+        (answer) => answer.label === selectedValue
+      );
+      const selectedScore = selectedAnswerObject
+        ? selectedAnswerObject.score
+        : 0;
+      setScore(selectedScore);
+    }
   }
 
   return (
     <div>
-      <h3>{children}</h3>
+      <h3>{question}</h3>
       {answers.map((answer, index) => (
         <label key={index} htmlFor={`${answer.label}-${name}`}>
           <input
