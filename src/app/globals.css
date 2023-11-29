@@ -126,6 +126,10 @@ button {
   }
 }
 
+.animatedDots {
+  text-align: center;
+}
+
 .animatedDots:after {
   content: "...";
   overflow: hidden;
