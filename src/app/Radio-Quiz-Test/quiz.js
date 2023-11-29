@@ -53,4 +53,40 @@ export const quiz = [
       { label: "czxvq123e", score: 5 },
     ],
   },
+  {
+    question: "7. what is the asdjasikdha",
+    answers: [
+      { label: "123", score: 2 },
+      { label: "zxcbff", score: 1 },
+      { label: "12xzczx3", score: 4 },
+      { label: "czxvq123e", score: 5 },
+    ],
+  },
+  {
+    question: "8. what is the asdjasikdha",
+    answers: [
+      { label: "123", score: 2 },
+      { label: "zxcbff", score: 1 },
+      { label: "12xzczx3", score: 4 },
+      { label: "czxvq123e", score: 5 },
+    ],
+  },
+  {
+    question: "9. what is the asdjasikdha",
+    answers: [
+      { label: "123", score: 2 },
+      { label: "zxcbff", score: 1 },
+      { label: "12xzczx3", score: 4 },
+      { label: "czxvq123e", score: 5 },
+    ],
+  },
+  {
+    question: "10 what is the asdjasikdha",
+    answers: [
+      { label: "123", score: 2 },
+      { label: "zxcbff", score: 1 },
+      { label: "12xzczx3", score: 4 },
+      { label: "czxvq123e", score: 5 },
+    ],
+  },
 ];

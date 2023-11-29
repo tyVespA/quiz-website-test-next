@@ -44,32 +44,154 @@ export default function RadioQuiz({ quiz }) {
 
         {scores.Q1 <= 0 && <p>Select an answer to display the next question</p>}
 
-        {quiz.map((question, index) => (
-          <div
-            key={index}
-            className={`${styles.questionContainer} ${
-              scores[`Q${index + 1}`] > 0 ? styles.fadeIn : ""
-            }  `}
-          >
-            <RadioQuestion
-              question={question.question}
-              answers={question.answers}
-              name={`Q${index + 1}`}
-              score={scores[`Q${index + 1}`]}
-              setScore={(newScore) =>
-                setScores((prevScores) => ({
-                  ...prevScores,
-                  [`Q${index + 1}`]: newScore,
-                }))
-              }
-            ></RadioQuestion>
-          </div>
-        ))}
+        <div
+          className={`${styles.questionContainer} ${
+            scores.Q1 > 0 ? styles.fadeIn : ""
+          }  `}
+        >
+          <RadioQuestion
+            question={quiz[1].question}
+            answers={quiz[1].answers}
+            name="Q2"
+            score={scores.Q2}
+            setScore={(newScore) =>
+              setScores((prevScores) => ({ ...prevScores, Q2: newScore }))
+            }
+          ></RadioQuestion>
+        </div>
+
+        <div
+          className={`${styles.questionContainer} ${
+            scores.Q2 > 0 ? styles.fadeIn : ""
+          }  `}
+        >
+          <RadioQuestion
+            question={quiz[2].question}
+            answers={quiz[2].answers}
+            name="Q3"
+            score={scores.Q3}
+            setScore={(newScore) =>
+              setScores((prevScores) => ({ ...prevScores, Q3: newScore }))
+            }
+          ></RadioQuestion>
+        </div>
+
+        <div
+          className={`${styles.questionContainer} ${
+            scores.Q3 > 0 ? styles.fadeIn : ""
+          }  `}
+        >
+          <RadioQuestion
+            question={quiz[3].question}
+            answers={quiz[3].answers}
+            name="Q4"
+            score={scores.Q4}
+            setScore={(newScore) =>
+              setScores((prevScores) => ({ ...prevScores, Q4: newScore }))
+            }
+          ></RadioQuestion>
+        </div>
+
+        <div
+          className={`${styles.questionContainer} ${
+            scores.Q4 > 0 ? styles.fadeIn : ""
+          }  `}
+        >
+          <RadioQuestion
+            question={quiz[4].question}
+            answers={quiz[4].answers}
+            name="Q5"
+            score={scores.Q5}
+            setScore={(newScore) =>
+              setScores((prevScores) => ({ ...prevScores, Q5: newScore }))
+            }
+          ></RadioQuestion>
+        </div>
+
+        <div
+          className={`${styles.questionContainer} ${
+            scores.Q5 > 0 ? styles.fadeIn : ""
+          }  `}
+        >
+          <RadioQuestion
+            question={quiz[5].question}
+            answers={quiz[5].answers}
+            name="Q6"
+            score={scores.Q6}
+            setScore={(newScore) =>
+              setScores((prevScores) => ({ ...prevScores, Q6: newScore }))
+            }
+          ></RadioQuestion>
+        </div>
+
+        <div
+          className={`${styles.questionContainer} ${
+            scores.Q6 > 0 ? styles.fadeIn : ""
+          }  `}
+        >
+          <RadioQuestion
+            question={quiz[6].question}
+            answers={quiz[6].answers}
+            name="Q7"
+            score={scores.Q7}
+            setScore={(newScore) =>
+              setScores((prevScores) => ({ ...prevScores, Q7: newScore }))
+            }
+          ></RadioQuestion>
+        </div>
+
+        <div
+          className={`${styles.questionContainer} ${
+            scores.Q7 > 0 ? styles.fadeIn : ""
+          }  `}
+        >
+          <RadioQuestion
+            question={quiz[7].question}
+            answers={quiz[7].answers}
+            name="Q8"
+            score={scores.Q8}
+            setScore={(newScore) =>
+              setScores((prevScores) => ({ ...prevScores, Q8: newScore }))
+            }
+          ></RadioQuestion>
+        </div>
+
+        <div
+          className={`${styles.questionContainer} ${
+            scores.Q8 > 0 ? styles.fadeIn : ""
+          }  `}
+        >
+          <RadioQuestion
+            question={quiz[8].question}
+            answers={quiz[8].answers}
+            name="Q9"
+            score={scores.Q9}
+            setScore={(newScore) =>
+              setScores((prevScores) => ({ ...prevScores, Q9: newScore }))
+            }
+          ></RadioQuestion>
+        </div>
+
+        <div
+          className={`${styles.questionContainer} ${
+            scores.Q9 > 0 ? styles.fadeIn : ""
+          }  `}
+        >
+          <RadioQuestion
+            question={quiz[9].question}
+            answers={quiz[9].answers}
+            name="Q10"
+            score={scores.Q10}
+            setScore={(newScore) =>
+              setScores((prevScores) => ({ ...prevScores, Q10: newScore }))
+            }
+          ></RadioQuestion>
+        </div>
 
         <button
           type="submit"
           className={`${styles.submitBtn} ${
-            scores.Q2 > 0 ? styles.fadeIn : ""
+            scores.Q10 > 0 ? styles.fadeIn : ""
           }`}
         >
           Calculate Result
