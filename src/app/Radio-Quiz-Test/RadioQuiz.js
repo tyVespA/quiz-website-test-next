@@ -21,11 +21,32 @@ export default function RadioQuiz({ quiz }) {
     Q10: -1,
   });
 
+  const [resultText, setResultText] = useState("");
+
   const [formSubmitted, setFormSubmitted] = useState(false);
-  // const [submitQ1, setSubmitQ1] = useState(false);
+
+  const totalScore =
+    scores.Q1 +
+    scores.Q2 +
+    scores.Q3 +
+    scores.Q4 +
+    scores.Q5 +
+    scores.Q6 +
+    scores.Q7 +
+    scores.Q8 +
+    scores.Q9 +
+    scores.Q10;
 
   function handleSubmit(event) {
     event.preventDefault();
+
+    if (totalScore <= 10) {
+      setResultText("Ur ok");
+    } else if (totalScore > 10 && totalScore < 20) {
+      setResultText("Uhhh");
+    } else if (totalScore >= 20) {
+      setResultText("ur gg");
+    }
     setFormSubmitted(true);
   }
 
@@ -51,7 +72,11 @@ export default function RadioQuiz({ quiz }) {
           }
         ></RadioQuestion>
 
-        {scores.Q1 <= 0 && <p>Select an answer to display the next question</p>}
+        {scores.Q1 <= 0 && (
+          <p className="animatedDots">
+            Select an answer to display the next question
+          </p>
+        )}
 
         <div
           className={`${styles.questionContainer} ${
@@ -188,23 +213,32 @@ export default function RadioQuiz({ quiz }) {
           Calculate Result
         </button>
 
-        <p className={`${styles.score} ${formSubmitted ? styles.fadeIn : ""}`}>
-          Score:{" "}
-          {scores.Q1 +
-            scores.Q2 +
-            scores.Q3 +
-            scores.Q4 +
-            scores.Q5 +
-            scores.Q6 +
-            scores.Q7 +
-            scores.Q8 +
-            scores.Q9 +
-            scores.Q10}
-        </p>
+        <div>
+          <p
+            className={`${styles.score} ${formSubmitted ? styles.fadeIn : ""}`}
+          >
+            You scored:{" "}
+            {scores.Q1 +
+              scores.Q2 +
+              scores.Q3 +
+              scores.Q4 +
+              scores.Q5 +
+              scores.Q6 +
+              scores.Q7 +
+              scores.Q8 +
+              scores.Q9 +
+              scores.Q10}{" "}
+            / 30
+          </p>
+          <p
+            className={`${styles.resultTest} ${
+              formSubmitted ? styles.fadeIn : ""
+            }`}
+          >
+            {resultText}
+          </p>
+        </div>
       </form>
-      <br />
-      <p>Score Q1: {scores.Q1}</p>
-      <p>Score Q2: {scores.Q2}</p>
     </div>
   );
 }
