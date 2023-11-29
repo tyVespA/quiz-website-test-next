@@ -9,16 +9,16 @@ export default function RadioQuiz({ quiz }) {
   console.log(questionsAmount);
 
   const [scores, setScores] = useState({
-    Q1: 0,
-    Q2: 0,
-    Q3: 0,
-    Q4: 0,
-    Q5: 0,
-    Q6: 0,
-    Q7: 0,
-    Q8: 0,
-    Q9: 0,
-    Q10: 0,
+    Q1: -1,
+    Q2: -1,
+    Q3: -1,
+    Q4: -1,
+    Q5: -1,
+    Q6: -1,
+    Q7: -1,
+    Q8: -1,
+    Q9: -1,
+    Q10: -1,
   });
 
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -28,6 +28,15 @@ export default function RadioQuiz({ quiz }) {
     event.preventDefault();
     setFormSubmitted(true);
   }
+
+  const handleAnswerSelect = (questionNumber, newScore) => {
+    setScores((prevScores) => ({ ...prevScores, [questionNumber]: newScore }));
+
+    window.scrollTo({
+      top: window.scrollY + 154,
+      behavior: "smooth",
+    });
+  };
 
   return (
     <div className={`quiz-container ${styles.radioQuizTest}`}>
@@ -46,7 +55,7 @@ export default function RadioQuiz({ quiz }) {
 
         <div
           className={`${styles.questionContainer} ${
-            scores.Q1 > 0 ? styles.fadeIn : ""
+            scores.Q1 >= 0 ? styles.fadeIn : ""
           }  `}
         >
           <RadioQuestion
@@ -54,9 +63,7 @@ export default function RadioQuiz({ quiz }) {
             answers={quiz[1].answers}
             name="Q2"
             score={scores.Q2}
-            setScore={(newScore) =>
-              setScores((prevScores) => ({ ...prevScores, Q2: newScore }))
-            }
+            setScore={(newScore) => handleAnswerSelect("Q2", newScore)}
           ></RadioQuestion>
         </div>
 
@@ -70,9 +77,7 @@ export default function RadioQuiz({ quiz }) {
             answers={quiz[2].answers}
             name="Q3"
             score={scores.Q3}
-            setScore={(newScore) =>
-              setScores((prevScores) => ({ ...prevScores, Q3: newScore }))
-            }
+            setScore={(newScore) => handleAnswerSelect("Q3", newScore)}
           ></RadioQuestion>
         </div>
 
@@ -86,9 +91,7 @@ export default function RadioQuiz({ quiz }) {
             answers={quiz[3].answers}
             name="Q4"
             score={scores.Q4}
-            setScore={(newScore) =>
-              setScores((prevScores) => ({ ...prevScores, Q4: newScore }))
-            }
+            setScore={(newScore) => handleAnswerSelect("Q4", newScore)}
           ></RadioQuestion>
         </div>
 
@@ -102,9 +105,7 @@ export default function RadioQuiz({ quiz }) {
             answers={quiz[4].answers}
             name="Q5"
             score={scores.Q5}
-            setScore={(newScore) =>
-              setScores((prevScores) => ({ ...prevScores, Q5: newScore }))
-            }
+            setScore={(newScore) => handleAnswerSelect("Q5", newScore)}
           ></RadioQuestion>
         </div>
 
@@ -118,9 +119,7 @@ export default function RadioQuiz({ quiz }) {
             answers={quiz[5].answers}
             name="Q6"
             score={scores.Q6}
-            setScore={(newScore) =>
-              setScores((prevScores) => ({ ...prevScores, Q6: newScore }))
-            }
+            setScore={(newScore) => handleAnswerSelect("Q6", newScore)}
           ></RadioQuestion>
         </div>
 
@@ -134,9 +133,7 @@ export default function RadioQuiz({ quiz }) {
             answers={quiz[6].answers}
             name="Q7"
             score={scores.Q7}
-            setScore={(newScore) =>
-              setScores((prevScores) => ({ ...prevScores, Q7: newScore }))
-            }
+            setScore={(newScore) => handleAnswerSelect("Q7", newScore)}
           ></RadioQuestion>
         </div>
 
@@ -150,9 +147,7 @@ export default function RadioQuiz({ quiz }) {
             answers={quiz[7].answers}
             name="Q8"
             score={scores.Q8}
-            setScore={(newScore) =>
-              setScores((prevScores) => ({ ...prevScores, Q8: newScore }))
-            }
+            setScore={(newScore) => handleAnswerSelect("Q8", newScore)}
           ></RadioQuestion>
         </div>
 
@@ -166,9 +161,7 @@ export default function RadioQuiz({ quiz }) {
             answers={quiz[8].answers}
             name="Q9"
             score={scores.Q9}
-            setScore={(newScore) =>
-              setScores((prevScores) => ({ ...prevScores, Q9: newScore }))
-            }
+            setScore={(newScore) => handleAnswerSelect("Q9", newScore)}
           ></RadioQuestion>
         </div>
 
@@ -182,9 +175,7 @@ export default function RadioQuiz({ quiz }) {
             answers={quiz[9].answers}
             name="Q10"
             score={scores.Q10}
-            setScore={(newScore) =>
-              setScores((prevScores) => ({ ...prevScores, Q10: newScore }))
-            }
+            setScore={(newScore) => handleAnswerSelect("Q10", newScore)}
           ></RadioQuestion>
         </div>
 
