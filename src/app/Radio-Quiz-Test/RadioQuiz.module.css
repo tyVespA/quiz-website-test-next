@@ -1,12 +1,17 @@
 .radioQuizTest {
   max-width: 1100px;
   margin-inline: auto;
+  padding-bottom: 300px;
 }
 
 .form {
   display: flex;
   flex-direction: column;
   gap: 30px;
+}
+
+.hidden {
+  display: none;
 }
 
 .form > div {
@@ -20,10 +25,11 @@
 }
 
 .submitBtn {
+  margin-top: 20px;
   border: transparent;
   padding: 10px 20px;
   border-radius: 24px;
-  align-self: flex-start;
+  align-self: center;
 }
 
 .questionContainer,
@@ -35,15 +41,23 @@
   transition: all 0.5s;
 }
 
+.hidden {
+  display: none !important;
+}
+
 .questionContainer > div {
   display: flex;
   flex-direction: column;
 }
 
 .fadeIn {
-  /* position: relative; */
   opacity: 1;
   transform: translateY(0);
+}
+
+.score,
+.resultTest {
+  text-align: center;
 }
 
 .score {

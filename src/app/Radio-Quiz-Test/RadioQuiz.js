@@ -47,7 +47,13 @@ export default function RadioQuiz({ quiz }) {
     } else if (totalScore >= 20) {
       setResultText("ur gg");
     }
+
     setFormSubmitted(true);
+    window.scrollTo({
+      //TO CHANGE AFTER SETTING UP IMAGE
+      top: window.scrollY + 500,
+      behavior: "smooth",
+    });
   }
 
   const handleAnswerSelect = (questionNumber, newScore) => {
@@ -80,7 +86,7 @@ export default function RadioQuiz({ quiz }) {
 
         <div
           className={`${styles.questionContainer} ${
-            scores.Q1 >= 0 ? styles.fadeIn : ""
+            scores.Q1 >= 0 ? styles.fadeIn : styles.hidden
           }  `}
         >
           <RadioQuestion
@@ -94,7 +100,7 @@ export default function RadioQuiz({ quiz }) {
 
         <div
           className={`${styles.questionContainer} ${
-            scores.Q2 > 0 ? styles.fadeIn : ""
+            scores.Q2 > 0 ? styles.fadeIn : styles.hidden
           }  `}
         >
           <RadioQuestion
@@ -108,7 +114,7 @@ export default function RadioQuiz({ quiz }) {
 
         <div
           className={`${styles.questionContainer} ${
-            scores.Q3 > 0 ? styles.fadeIn : ""
+            scores.Q3 > 0 ? styles.fadeIn : styles.hidden
           }  `}
         >
           <RadioQuestion
@@ -122,7 +128,7 @@ export default function RadioQuiz({ quiz }) {
 
         <div
           className={`${styles.questionContainer} ${
-            scores.Q4 > 0 ? styles.fadeIn : ""
+            scores.Q4 > 0 ? styles.fadeIn : styles.hidden
           }  `}
         >
           <RadioQuestion
@@ -136,7 +142,7 @@ export default function RadioQuiz({ quiz }) {
 
         <div
           className={`${styles.questionContainer} ${
-            scores.Q5 > 0 ? styles.fadeIn : ""
+            scores.Q5 > 0 ? styles.fadeIn : styles.hidden
           }  `}
         >
           <RadioQuestion
@@ -150,7 +156,7 @@ export default function RadioQuiz({ quiz }) {
 
         <div
           className={`${styles.questionContainer} ${
-            scores.Q6 > 0 ? styles.fadeIn : ""
+            scores.Q6 > 0 ? styles.fadeIn : styles.hidden
           }  `}
         >
           <RadioQuestion
@@ -164,7 +170,7 @@ export default function RadioQuiz({ quiz }) {
 
         <div
           className={`${styles.questionContainer} ${
-            scores.Q7 > 0 ? styles.fadeIn : ""
+            scores.Q7 > 0 ? styles.fadeIn : styles.hidden
           }  `}
         >
           <RadioQuestion
@@ -178,7 +184,7 @@ export default function RadioQuiz({ quiz }) {
 
         <div
           className={`${styles.questionContainer} ${
-            scores.Q8 > 0 ? styles.fadeIn : ""
+            scores.Q8 > 0 ? styles.fadeIn : styles.hidden
           }  `}
         >
           <RadioQuestion
@@ -192,7 +198,7 @@ export default function RadioQuiz({ quiz }) {
 
         <div
           className={`${styles.questionContainer} ${
-            scores.Q9 > 0 ? styles.fadeIn : ""
+            scores.Q9 > 0 ? styles.fadeIn : styles.hidden
           }  `}
         >
           <RadioQuestion
@@ -207,7 +213,7 @@ export default function RadioQuiz({ quiz }) {
         <button
           type="submit"
           className={`${styles.submitBtn} ${
-            scores.Q10 > 0 ? styles.fadeIn : ""
+            scores.Q10 > 0 ? styles.fadeIn : styles.hidden
           }`}
         >
           Calculate Result
