@@ -30,7 +30,7 @@ export default function RadioQuestion({
   }
 
   return (
-    <div>
+    <>
       <h3>{question}</h3>
       {answers.map((answer, index) => (
         <label key={index} htmlFor={`${answer.label}-${name}`}>
@@ -44,6 +44,6 @@ export default function RadioQuestion({
           {answer.label}
         </label>
       ))}
-    </div>
+    </>
   );
 }
