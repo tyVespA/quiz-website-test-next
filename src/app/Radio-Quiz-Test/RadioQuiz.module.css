@@ -14,10 +14,10 @@
   display: none;
 }
 
-.form > div {
+/* .form {
   display: flex;
   flex-direction: column;
-}
+} */
 
 .form label {
   align-self: flex-start;
@@ -45,7 +45,8 @@
   display: none !important;
 }
 
-.questionContainer > div {
+.questionContainer,
+.firstQuestionContainer {
   display: flex;
   flex-direction: column;
 }
