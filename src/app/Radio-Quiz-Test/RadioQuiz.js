@@ -68,15 +68,17 @@ export default function RadioQuiz({ quiz }) {
   return (
     <div className={`quiz-container ${styles.radioQuizTest}`}>
       <form action="" className={styles.form} onSubmit={handleSubmit}>
-        <RadioQuestion
-          question={quiz[0].question}
-          answers={quiz[0].answers}
-          name="Q1"
-          score={scores.Q1}
-          setScore={(newScore) =>
-            setScores((prevScores) => ({ ...prevScores, Q1: newScore }))
-          }
-        ></RadioQuestion>
+        <div className={styles.firstQuestionContainer}>
+          <RadioQuestion
+            question={quiz[0].question}
+            answers={quiz[0].answers}
+            name="Q1"
+            score={scores.Q1}
+            setScore={(newScore) =>
+              setScores((prevScores) => ({ ...prevScores, Q1: newScore }))
+            }
+          ></RadioQuestion>
+        </div>
 
         {scores.Q1 <= 0 && (
           <p className="animatedDots">
