@@ -138,4 +138,5 @@ button {
   animation: ellipsis-dot 3s infinite 0.3s;
   animation-fill-mode: forwards;
   width: 1.25em;
+  text-align: start;
 }
