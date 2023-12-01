@@ -9,7 +9,13 @@ export default function page() {
     <div className={`test-page ${styles.radioQuizTestPage}`}>
       <h1>Radio Quiz Testing</h1>
       {/* <RadioQuiz quiz={quiz} /> */}
-      <RadioQuizFadeSideways quiz={quiz} />
+      <RadioQuizFadeSideways
+        quiz={quiz}
+        highPointsText={"highPointsText"}
+        highMidPointsText={"highMidPointsText"}
+        lowMidPointsText={"lowMidPointsText"}
+        lowPointsText={"lowPointsText"}
+      />
     </div>
   );
 }
