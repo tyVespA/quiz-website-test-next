@@ -45,6 +45,10 @@
   flex-direction: column;
 }
 
+.firstQuestionContainer {
+  z-index: 99;
+}
+
 .score,
 .resultTest {
   text-align: center;
@@ -84,7 +88,7 @@
 
 .questionContainer {
   position: absolute;
-  left: 250px;
+  left: 350px;
   width: 500px;
   opacity: 0;
   transition: all 0.2s ease-out;
@@ -94,12 +98,12 @@
   opacity: 1;
   left: 0;
   transform: translateY(0);
-  z-index: 1;
+  z-index: 99;
 }
 
 .fadeOut {
   opacity: 0;
-  left: -250px;
+  left: -350px;
   z-index: -1;
 }
 
@@ -113,4 +117,5 @@
 .fadeInDownwards {
   transform: translateY(-30px);
   opacity: 1;
+  z-index: 99;
 }
