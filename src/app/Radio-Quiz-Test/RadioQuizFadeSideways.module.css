@@ -84,7 +84,7 @@
 
 .questionContainer {
   position: absolute;
-  left: 150px;
+  left: 250px;
   width: 500px;
   opacity: 0;
   transition: all 0.2s ease-out;
@@ -99,13 +99,13 @@
 
 .fadeOut {
   opacity: 0;
-  left: -150px;
+  left: -250px;
   z-index: -1;
 }
 
 .score,
 .resultTest {
-  transform: translateY(-30px);
+  transform: translateY(-40px);
   position: relative;
   top: 20px;
 }
