@@ -4,7 +4,13 @@ import { useState } from "react";
 import RadioQuestion from "./RadioQuestion";
 import styles from "./RadioQuizFadeSideways.module.css";
 
-export default function RadioQuizFadeSideways({ quiz }) {
+export default function RadioQuizFadeSideways({
+  quiz,
+  highPointsText,
+  highMidPointsText,
+  lowMidPointsText,
+  lowPointsText,
+}) {
   const questionsAmount = quiz.length;
   console.log(questionsAmount);
 
@@ -41,19 +47,14 @@ export default function RadioQuizFadeSideways({ quiz }) {
     event.preventDefault();
 
     if (totalScore <= 10) {
-      setResultText("Ur ok");
+      setResultText(lowPointsText);
     } else if (totalScore > 10 && totalScore < 20) {
-      setResultText("Uhhh");
+      setResultText(highMidPointsText);
     } else if (totalScore >= 20) {
-      setResultText("ur gg");
+      setResultText(highPointsText);
     }
 
     setFormSubmitted(true);
-    window.scrollTo({
-      //TO CHANGE AFTER SETTING UP IMAGE
-      top: window.scrollY + 500,
-      behavior: "smooth",
-    });
   }
 
   const handleAnswerSelect = (questionNumber, newScore) => {
