@@ -68,7 +68,11 @@ export default function RadioQuizFadeSideways({ quiz }) {
   return (
     <div className={`quiz-container ${styles.radioQuizTest}`}>
       <form action="" className={styles.form} onSubmit={handleSubmit}>
-        <div className={styles.firstQuestionContainer}>
+        <div
+          className={`${styles.firstQuestionContainer} ${
+            scores.Q1 >= 0 ? styles.fadeOut : ""
+          }`}
+        >
           <RadioQuestion
             question={quiz[0].question}
             answers={quiz[0].answers}
@@ -81,15 +85,15 @@ export default function RadioQuizFadeSideways({ quiz }) {
         </div>
 
         {scores.Q1 <= 0 && (
-          <p className="animatedDots">
+          <p className={`animatedDots ${styles.animatedDots}`}>
             Select an answer to display the next question
           </p>
         )}
 
         <div
           className={`${styles.questionContainer} ${
-            scores.Q1 >= 0 ? styles.fadeIn : styles.hidden
-          }  `}
+            scores.Q1 >= 0 ? styles.fadeIn : ""
+          }  ${scores.Q2 >= 0 ? styles.fadeOut : ""} `}
         >
           <RadioQuestion
             question={quiz[1].question}
@@ -102,8 +106,8 @@ export default function RadioQuizFadeSideways({ quiz }) {
 
         <div
           className={`${styles.questionContainer} ${
-            scores.Q2 > 0 ? styles.fadeIn : styles.hidden
-          }  `}
+            scores.Q2 > 0 ? styles.fadeIn : ""
+          } ${scores.Q3 >= 0 ? styles.fadeOut : ""}  `}
         >
           <RadioQuestion
             question={quiz[2].question}
@@ -116,8 +120,8 @@ export default function RadioQuizFadeSideways({ quiz }) {
 
         <div
           className={`${styles.questionContainer} ${
-            scores.Q3 > 0 ? styles.fadeIn : styles.hidden
-          }  `}
+            scores.Q3 > 0 ? styles.fadeIn : ""
+          }  ${scores.Q4 >= 0 ? styles.fadeOut : ""} `}
         >
           <RadioQuestion
             question={quiz[3].question}
@@ -130,8 +134,8 @@ export default function RadioQuizFadeSideways({ quiz }) {
 
         <div
           className={`${styles.questionContainer} ${
-            scores.Q4 > 0 ? styles.fadeIn : styles.hidden
-          }  `}
+            scores.Q4 > 0 ? styles.fadeIn : ""
+          } ${scores.Q5 >= 0 ? styles.fadeOut : ""}  `}
         >
           <RadioQuestion
             question={quiz[4].question}
@@ -144,8 +148,8 @@ export default function RadioQuizFadeSideways({ quiz }) {
 
         <div
           className={`${styles.questionContainer} ${
-            scores.Q5 > 0 ? styles.fadeIn : styles.hidden
-          }  `}
+            scores.Q5 > 0 ? styles.fadeIn : ""
+          } ${scores.Q6 >= 0 ? styles.fadeOut : ""}  `}
         >
           <RadioQuestion
             question={quiz[5].question}
@@ -158,8 +162,8 @@ export default function RadioQuizFadeSideways({ quiz }) {
 
         <div
           className={`${styles.questionContainer} ${
-            scores.Q6 > 0 ? styles.fadeIn : styles.hidden
-          }  `}
+            scores.Q6 > 0 ? styles.fadeIn : ""
+          } ${scores.Q7 >= 0 ? styles.fadeOut : ""} `}
         >
           <RadioQuestion
             question={quiz[6].question}
@@ -172,8 +176,8 @@ export default function RadioQuizFadeSideways({ quiz }) {
 
         <div
           className={`${styles.questionContainer} ${
-            scores.Q7 > 0 ? styles.fadeIn : styles.hidden
-          }  `}
+            scores.Q7 > 0 ? styles.fadeIn : ""
+          } ${scores.Q8 >= 0 ? styles.fadeOut : ""} `}
         >
           <RadioQuestion
             question={quiz[7].question}
@@ -186,8 +190,8 @@ export default function RadioQuizFadeSideways({ quiz }) {
 
         <div
           className={`${styles.questionContainer} ${
-            scores.Q8 > 0 ? styles.fadeIn : styles.hidden
-          }  `}
+            scores.Q8 > 0 ? styles.fadeIn : ""
+          } ${scores.Q9 >= 0 ? styles.fadeOut : ""}  `}
         >
           <RadioQuestion
             question={quiz[8].question}
@@ -200,8 +204,8 @@ export default function RadioQuizFadeSideways({ quiz }) {
 
         <div
           className={`${styles.questionContainer} ${
-            scores.Q9 > 0 ? styles.fadeIn : styles.hidden
-          }  `}
+            scores.Q9 > 0 ? styles.fadeIn : ""
+          } ${scores.Q10 >= 0 ? styles.fadeOut : ""} `}
         >
           <RadioQuestion
             question={quiz[9].question}
@@ -215,7 +219,7 @@ export default function RadioQuizFadeSideways({ quiz }) {
         <button
           type="submit"
           className={`${styles.submitBtn} ${
-            scores.Q10 > 0 ? styles.fadeIn : styles.hidden
+            scores.Q10 > 0 ? styles.fadeIn : ""
           }`}
         >
           Calculate Result
@@ -223,7 +227,9 @@ export default function RadioQuizFadeSideways({ quiz }) {
 
         <div>
           <p
-            className={`${styles.score} ${formSubmitted ? styles.fadeIn : ""}`}
+            className={`${styles.score} ${
+              formSubmitted ? styles.fadeInDownwards : ""
+            }`}
           >
             You scored:{" "}
             {scores.Q1 +
@@ -240,7 +246,7 @@ export default function RadioQuizFadeSideways({ quiz }) {
           </p>
           <p
             className={`${styles.resultTest} ${
-              formSubmitted ? styles.fadeIn : ""
+              formSubmitted ? styles.fadeInDownwards : ""
             }`}
           >
             {resultText}

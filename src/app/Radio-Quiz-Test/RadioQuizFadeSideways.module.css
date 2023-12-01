@@ -14,11 +14,6 @@
   display: none;
 }
 
-/* .form {
-  display: flex;
-  flex-direction: column;
-} */
-
 .form label {
   align-self: flex-start;
   padding-left: 20px;
@@ -32,13 +27,12 @@
   align-self: center;
 }
 
-.questionContainer,
 .submitBtn,
 .score,
 .resultTest {
-  transform: translateY(-20px);
   opacity: 0;
   transition: all 0.5s;
+  z-index: -1;
 }
 
 .hidden {
@@ -49,11 +43,6 @@
 .firstQuestionContainer {
   display: flex;
   flex-direction: column;
-}
-
-.fadeIn {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 .score,
@@ -68,4 +57,60 @@
 
 .resultTest {
   transition-delay: 0.5s;
+}
+
+/* SIDEWAYS ANIMATION HELPER CLASSES */
+
+.radioQuizTest {
+  position: relative;
+}
+
+.firstQuestionContainer {
+  position: absolute;
+  left: 0;
+  opacity: 1;
+  transition: all 0.2s ease-out;
+  /* left:  */
+}
+
+.animatedDots {
+  position: absolute;
+  width: 500px;
+  /* bottom: 250px; */
+  top: 170px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.questionContainer {
+  position: absolute;
+  left: 150px;
+  width: 500px;
+  opacity: 0;
+  transition: all 0.2s ease-out;
+}
+
+.fadeIn {
+  opacity: 1;
+  left: 0;
+  transform: translateY(0);
+  z-index: 1;
+}
+
+.fadeOut {
+  opacity: 0;
+  left: -150px;
+  z-index: -1;
+}
+
+.score,
+.resultTest {
+  transform: translateY(-30px);
+  position: relative;
+  top: 20px;
+}
+
+.fadeInDownwards {
+  transform: translateY(-30px);
+  opacity: 1;
 }
