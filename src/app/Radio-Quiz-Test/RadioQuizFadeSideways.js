@@ -4,7 +4,7 @@ import { useState } from "react";
 import RadioQuestion from "./RadioQuestion";
 import styles from "./RadioQuizFadeSideways.module.css";
 
-export default function RadioQuiz({ quiz }) {
+export default function RadioQuizFadeSideways({ quiz }) {
   const questionsAmount = quiz.length;
   console.log(questionsAmount);
 
