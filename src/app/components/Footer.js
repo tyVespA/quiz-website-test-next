@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <div className={styles.footer}>
+    <div className={styles.footerContainer}>
       footer{" "}
       <div className={styles.socialIconsContainer}>
         <Link href={"/"}>
