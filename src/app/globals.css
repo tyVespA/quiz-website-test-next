@@ -68,8 +68,15 @@ button {
 
 /* GLOBAL CLASSES */
 
+.pageBody {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .bodyGlobal {
   padding: 80px 40px;
+  flex: 1;
 }
 
 .radioForm form {
