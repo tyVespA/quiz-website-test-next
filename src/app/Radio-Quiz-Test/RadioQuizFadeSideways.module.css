@@ -29,7 +29,8 @@
 
 .submitBtn,
 .score,
-.resultTest {
+.resultTest,
+.resultTestImg {
   opacity: 0;
   transition: all 0.5s;
   z-index: -1;
@@ -49,6 +50,12 @@
   z-index: 99;
 }
 
+.results {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 .score,
 .resultTest {
   text-align: center;
@@ -59,8 +66,13 @@
   font-weight: 700;
 }
 
+.resultTestImg {
+  border-radius: 14px;
+  transition-delay: 0.3s;
+}
+
 .resultTest {
-  transition-delay: 0.5s;
+  transition-delay: 0.6s;
 }
 
 /* SIDEWAYS ANIMATION HELPER CLASSES */
@@ -108,7 +120,8 @@
 }
 
 .score,
-.resultTest {
+.resultTest,
+.resultTestImg {
   transform: translateY(-40px);
   position: relative;
   top: 20px;
