@@ -8,7 +8,12 @@ export default function Header() {
     <header className={styles.headerContainer}>
       <div className={styles.header}>
         <Link href={"/"} className={styles.logo}>
-          <Image src={"./logo-white.svg"} width={60} height={60} alt={"logo"} />
+          <Image
+            src={"./images/logo-white.svg"}
+            width={60}
+            height={60}
+            alt={"logo"}
+          />
           <p className={styles.title}>Embrace Mental Illness</p>
         </Link>
         <nav>
