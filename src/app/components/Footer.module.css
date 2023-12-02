@@ -1,0 +1,14 @@
+.socialIconsContainer {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.footer svg {
+  fill: var(--white);
+  transform: scale(0.75);
+  transition: all 0.2s;
+}
+.footer svg:hover {
+  fill: var(--grey);
+}
