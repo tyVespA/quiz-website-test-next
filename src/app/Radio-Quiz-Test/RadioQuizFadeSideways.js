@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
 import { useState } from "react";
-import RadioQuestion from "./RadioQuestion";
 import styles from "./RadioQuizFadeSideways.module.css";
+import RadioQuestion from "./RadioQuestion";
 
 export default function RadioQuizFadeSideways({
   quiz,
@@ -10,10 +10,11 @@ export default function RadioQuizFadeSideways({
   highMidPointsText,
   lowMidPointsText,
   lowPointsText,
+  highPointsImg,
+  highMidPointsImg,
+  lowMidPointsImg,
+  lowPointsImg,
 }) {
-  const questionsAmount = quiz.length;
-  console.log(questionsAmount);
-
   const [scores, setScores] = useState({
     Q1: -1,
     Q2: -1,
@@ -59,11 +60,6 @@ export default function RadioQuizFadeSideways({
 
   const handleAnswerSelect = (questionNumber, newScore) => {
     setScores((prevScores) => ({ ...prevScores, [questionNumber]: newScore }));
-
-    window.scrollTo({
-      top: window.scrollY + 154,
-      behavior: "smooth",
-    });
   };
 
   return (
@@ -226,7 +222,7 @@ export default function RadioQuizFadeSideways({
           Calculate Result
         </button>
 
-        <div>
+        <div className={styles.results}>
           <p
             className={`${styles.score} ${
               formSubmitted ? styles.fadeInDownwards : ""
@@ -245,6 +241,14 @@ export default function RadioQuizFadeSideways({
               scores.Q10}{" "}
             / 30
           </p>
+          {/* replace scr with prop */}
+          <img
+            src="./images/degen2.jpg"
+            alt=""
+            className={`${styles.resultTestImg} ${
+              formSubmitted ? styles.fadeInDownwards : ""
+            }`}
+          />
           <p
             className={`${styles.resultTest} ${
               formSubmitted ? styles.fadeInDownwards : ""
