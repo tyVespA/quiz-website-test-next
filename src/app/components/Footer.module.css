@@ -18,6 +18,14 @@
   gap: 20px;
 }
 
+.logo img {
+  transition: all ease-out 0.5s;
+}
+
+.logo:hover img {
+  transform: rotate(180deg);
+}
+
 .title {
   font-size: 1.4rem;
   font-weight: 700;
