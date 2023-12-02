@@ -244,7 +244,7 @@ export default function RadioQuizFadeSideways({
           {/* replace scr with prop */}
           <img
             src="./images/degen2.jpg"
-            alt=""
+            alt="result image"
             className={`${styles.resultTestImg} ${
               formSubmitted ? styles.fadeInDownwards : ""
             }`}
