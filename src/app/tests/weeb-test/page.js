@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import RadioQuestion from "../components/quizTypes/RadioQuestion";
+import RadioQuestion from "../components/QuizComponents/RadioQuestion";
 import styles from "./page.module.css";
 
 export default function page() {
