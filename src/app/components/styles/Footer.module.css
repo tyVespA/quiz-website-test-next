@@ -1,7 +1,7 @@
 .footerContainer {
   border-top: 1px solid var(--grey);
   background-color: var(--darkerGrey);
-  padding: 30px 40px;
+  padding: 15px 40px;
 }
 
 .footer {
@@ -15,7 +15,7 @@
 .logo {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 10px;
 }
 
 .logo img {
@@ -27,7 +27,7 @@
 }
 
 .title {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 700;
 }
 

@@ -1,8 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
 import styles from "./page.module.css";
-import Question from "./components/quizTypes/Question";
-import Quiz from "./components/quizTypes/Quiz";
 import Button from "./components/Button";
 import TestCard from "./components/TestCard";
 
@@ -41,21 +38,21 @@ export default function Home() {
               alt={"man drinking"}
               title={"Am I a Degenerate?"}
               description={"Find out if you're a disgrace to society."}
-              href={"Degenerate-Test"}
+              href={"tests/degenerate-test"}
             />
             <TestCard
               imageName={"weebCardImg.jpg"}
               alt={"man drinking"}
               title={"Am I a Weeb?"}
               description={"Find out if you're a disgrace to society."}
-              href={"Weeb-Test"}
+              href={"tests/weeb-test"}
             />
             <TestCard
               imageName={"cuckholdCardImg.jpg"}
               alt={"man drinking"}
               title={"Am I a Cuck?"}
               description={"Find out if you're a disgrace to society."}
-              href={"Cuck-Test"}
+              href={"tests/cuck-test"}
             />
           </div>
         </section>
