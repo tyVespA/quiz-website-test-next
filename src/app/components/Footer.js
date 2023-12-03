@@ -4,6 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 
 export default function Footer() {
+  const currentYeat = new Date().getFullYear();
+
   return (
     <div className={styles.footerContainer}>
       <div className={styles.footer}>
@@ -18,7 +20,9 @@ export default function Footer() {
             <p className={styles.title}>Embrace Mental Illness</p>
           </Link>
         </div>
+        <div className={styles.copyright}>Copyright © {currentYeat}</div>
         <div className={styles.socialIconsContainer}>
+          <p>Find us at:</p>
           <Link href={"/"}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
