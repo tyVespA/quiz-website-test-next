@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 export default function Footer() {
-  const currentYeat = new Date().getFullYear();
+  const currentYear = new Date().getFullYear();
 
   return (
     <div className={styles.footerContainer}>
@@ -12,15 +12,15 @@ export default function Footer() {
         <div className={styles.footerTitle}>
           <Link href={"/"} className={styles.logo}>
             <Image
-              src={"./images/logo-white.svg"}
-              width={50}
-              height={50}
+              src={"/images/logo-white.svg"}
+              width={40}
+              height={40}
               alt={"logo"}
             />
             <p className={styles.title}>Embrace Mental Illness</p>
           </Link>
         </div>
-        <div className={styles.copyright}>Copyright © {currentYeat}</div>
+        <div className={styles.copyright}>Copyright © {currentYear}</div>
         <div className={styles.socialIconsContainer}>
           <p>Find us at:</p>
           <Link href={"/"}>
