@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import { useState } from "react";
 import RadioQuestion from "../components/quizTypes/RadioQuestion";
 import styles from "./page.module.css";
 

@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import styles from "./TestCard.module.css";
+import styles from "./styles/TestCard.module.css";
 
 export default function TestCard({ imageName, alt, title, description, href }) {
   return (

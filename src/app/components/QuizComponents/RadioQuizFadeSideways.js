@@ -1,13 +1,21 @@
 "use client";
 import React from "react";
 import { useState } from "react";
+import Image from "next/image";
+import styles from "./styles/RadioQuizFadeSideways.module.css";
 import RadioQuestion from "./RadioQuestion";
-import styles from "./RadioQuiz.module.css";
 
-export default function RadioQuiz({ quiz }) {
-  const questionsAmount = quiz.length;
-  console.log(questionsAmount);
-
+export default function RadioQuizFadeSideways({
+  quiz,
+  highPointsText,
+  highMidPointsText,
+  lowMidPointsText,
+  lowPointsText,
+  highPointsImg,
+  highMidPointsImg,
+  lowMidPointsImg,
+  lowPointsImg,
+}) {
   const [scores, setScores] = useState({
     Q1: -1,
     Q2: -1,
@@ -41,34 +49,28 @@ export default function RadioQuiz({ quiz }) {
     event.preventDefault();
 
     if (totalScore <= 10) {
-      setResultText("Ur ok");
+      setResultText(lowPointsText);
     } else if (totalScore > 10 && totalScore < 20) {
-      setResultText("Uhhh");
+      setResultText(highMidPointsText);
     } else if (totalScore >= 20) {
-      setResultText("ur gg");
+      setResultText(highPointsText);
     }
 
     setFormSubmitted(true);
-    window.scrollTo({
-      //TO CHANGE AFTER SETTING UP IMAGE
-      top: window.scrollY + 500,
-      behavior: "smooth",
-    });
   }
 
   const handleAnswerSelect = (questionNumber, newScore) => {
     setScores((prevScores) => ({ ...prevScores, [questionNumber]: newScore }));
-
-    window.scrollTo({
-      top: window.scrollY + 154,
-      behavior: "smooth",
-    });
   };
 
   return (
     <div className={`quiz-container ${styles.radioQuizTest}`}>
       <form action="" className={styles.form} onSubmit={handleSubmit}>
-        <div className={styles.firstQuestionContainer}>
+        <div
+          className={`${styles.firstQuestionContainer} ${
+            scores.Q1 >= 0 ? styles.fadeOut : ""
+          }`}
+        >
           <RadioQuestion
             question={quiz[0].question}
             answers={quiz[0].answers}
@@ -81,15 +83,15 @@ export default function RadioQuiz({ quiz }) {
         </div>
 
         {scores.Q1 <= 0 && (
-          <p className="animatedDots">
+          <p className={`animatedDots ${styles.animatedDots}`}>
             Select an answer to display the next question
           </p>
         )}
 
         <div
           className={`${styles.questionContainer} ${
-            scores.Q1 >= 0 ? styles.fadeIn : styles.hidden
-          }  `}
+            scores.Q1 >= 0 ? styles.fadeIn : ""
+          }  ${scores.Q2 >= 0 ? styles.fadeOut : ""} `}
         >
           <RadioQuestion
             question={quiz[1].question}
@@ -102,8 +104,8 @@ export default function RadioQuiz({ quiz }) {
 
         <div
           className={`${styles.questionContainer} ${
-            scores.Q2 > 0 ? styles.fadeIn : styles.hidden
-          }  `}
+            scores.Q2 > 0 ? styles.fadeIn : ""
+          } ${scores.Q3 >= 0 ? styles.fadeOut : ""}  `}
         >
           <RadioQuestion
             question={quiz[2].question}
@@ -116,8 +118,8 @@ export default function RadioQuiz({ quiz }) {
 
         <div
           className={`${styles.questionContainer} ${
-            scores.Q3 > 0 ? styles.fadeIn : styles.hidden
-          }  `}
+            scores.Q3 > 0 ? styles.fadeIn : ""
+          }  ${scores.Q4 >= 0 ? styles.fadeOut : ""} `}
         >
           <RadioQuestion
             question={quiz[3].question}
@@ -130,8 +132,8 @@ export default function RadioQuiz({ quiz }) {
 
         <div
           className={`${styles.questionContainer} ${
-            scores.Q4 > 0 ? styles.fadeIn : styles.hidden
-          }  `}
+            scores.Q4 > 0 ? styles.fadeIn : ""
+          } ${scores.Q5 >= 0 ? styles.fadeOut : ""}  `}
         >
           <RadioQuestion
             question={quiz[4].question}
@@ -144,8 +146,8 @@ export default function RadioQuiz({ quiz }) {
 
         <div
           className={`${styles.questionContainer} ${
-            scores.Q5 > 0 ? styles.fadeIn : styles.hidden
-          }  `}
+            scores.Q5 > 0 ? styles.fadeIn : ""
+          } ${scores.Q6 >= 0 ? styles.fadeOut : ""}  `}
         >
           <RadioQuestion
             question={quiz[5].question}
@@ -158,8 +160,8 @@ export default function RadioQuiz({ quiz }) {
 
         <div
           className={`${styles.questionContainer} ${
-            scores.Q6 > 0 ? styles.fadeIn : styles.hidden
-          }  `}
+            scores.Q6 > 0 ? styles.fadeIn : ""
+          } ${scores.Q7 >= 0 ? styles.fadeOut : ""} `}
         >
           <RadioQuestion
             question={quiz[6].question}
@@ -172,8 +174,8 @@ export default function RadioQuiz({ quiz }) {
 
         <div
           className={`${styles.questionContainer} ${
-            scores.Q7 > 0 ? styles.fadeIn : styles.hidden
-          }  `}
+            scores.Q7 > 0 ? styles.fadeIn : ""
+          } ${scores.Q8 >= 0 ? styles.fadeOut : ""} `}
         >
           <RadioQuestion
             question={quiz[7].question}
@@ -186,8 +188,8 @@ export default function RadioQuiz({ quiz }) {
 
         <div
           className={`${styles.questionContainer} ${
-            scores.Q8 > 0 ? styles.fadeIn : styles.hidden
-          }  `}
+            scores.Q8 > 0 ? styles.fadeIn : ""
+          } ${scores.Q9 >= 0 ? styles.fadeOut : ""}  `}
         >
           <RadioQuestion
             question={quiz[8].question}
@@ -200,8 +202,8 @@ export default function RadioQuiz({ quiz }) {
 
         <div
           className={`${styles.questionContainer} ${
-            scores.Q9 > 0 ? styles.fadeIn : styles.hidden
-          }  `}
+            scores.Q9 > 0 ? styles.fadeIn : ""
+          } ${scores.Q10 >= 0 ? styles.fadeOut : ""} `}
         >
           <RadioQuestion
             question={quiz[9].question}
@@ -215,15 +217,17 @@ export default function RadioQuiz({ quiz }) {
         <button
           type="submit"
           className={`${styles.submitBtn} ${
-            scores.Q10 > 0 ? styles.fadeIn : styles.hidden
+            scores.Q10 > 0 ? styles.fadeIn : ""
           }`}
         >
           Calculate Result
         </button>
 
-        <div>
+        <div className={styles.results}>
           <p
-            className={`${styles.score} ${formSubmitted ? styles.fadeIn : ""}`}
+            className={`${styles.score} ${
+              formSubmitted ? styles.fadeInDownwards : ""
+            }`}
           >
             You scored:{" "}
             {scores.Q1 +
@@ -238,9 +242,17 @@ export default function RadioQuiz({ quiz }) {
               scores.Q10}{" "}
             / 30
           </p>
+          {/* replace scr with prop */}
+          <img
+            src="/images/degen2.jpg"
+            alt="result image"
+            className={`${styles.resultTestImg} ${
+              formSubmitted ? styles.fadeInDownwards : ""
+            }`}
+          />
           <p
             className={`${styles.resultTest} ${
-              formSubmitted ? styles.fadeIn : ""
+              formSubmitted ? styles.fadeInDownwards : ""
             }`}
           >
             {resultText}

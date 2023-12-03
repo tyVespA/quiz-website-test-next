@@ -1,8 +1,5 @@
 "use client";
 import React from "react";
-import { useState } from "react";
-import FadeInRadioQuiz from "../components/FadeInRadioQuiz";
-import { weebQuestions } from "../assets/weebQuestions";
 
 export default function page() {
   return (

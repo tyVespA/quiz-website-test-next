@@ -1,8 +1,7 @@
 import React from "react";
 import styles from "./page.module.css";
-import RadioQuiz from "./RadioQuiz";
 import { quiz } from "./quiz";
-import RadioQuizFadeSideways from "./RadioQuizFadeSideways";
+import RadioQuizFadeSideways from "../../components/QuizComponents/RadioQuizFadeSideways";
 
 export default function page() {
   return (

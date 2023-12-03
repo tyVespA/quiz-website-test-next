@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./ScoreScreen.module.css";
+import styles from "./styles/ScoreScreen.module.css";
 import { useState } from "react";
 import { useEffect } from "react";
 

@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { useState } from "react";
-import styles from "./RadioQuestion.module.css";
+import styles from "./styles/RadioQuestion.module.css";
 
 export default function RadioQuestion({
   question,
