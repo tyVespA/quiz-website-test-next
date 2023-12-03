@@ -1,12 +1,12 @@
 .headerContainer {
   border-bottom: 1px solid var(--grey);
   background-color: var(--darkerGrey);
+  padding: 30px 40px;
 }
 
 .header {
   max-width: 1200px;
   margin-inline: auto;
-  padding: 30px 40px;
   font-size: 1.2rem;
 
   display: flex;

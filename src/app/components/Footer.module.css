@@ -7,15 +7,15 @@
 .footer {
   max-width: 1200px;
   margin-inline: auto;
-
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
 }
 
 .logo {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 15px;
 }
 
 .logo img {
@@ -31,10 +31,16 @@
   font-weight: 700;
 }
 
+.copyright {
+  justify-self: center;
+}
+
 .socialIconsContainer {
   display: flex;
   align-items: center;
   gap: 10px;
+
+  justify-self: end;
 }
 
 .footerContainer svg {
