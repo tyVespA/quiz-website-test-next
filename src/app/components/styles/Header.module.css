@@ -118,3 +118,15 @@
     transform: translateX(0);
   }
 }
+
+@media screen and (max-width: 400px) {
+  .header {
+    gap: 10px;
+  }
+  .header a {
+    gap: 10px;
+  }
+  .title {
+    font-size: 1.2rem;
+  }
+}
