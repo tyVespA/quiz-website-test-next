@@ -55,3 +55,23 @@
   gap: 50px;
   padding-bottom: 40px;
 }
+
+/* MOBILE */
+
+@media screen and (max-width: 1000px) {
+  .hero {
+    flex-direction: column;
+    gap: 50px;
+
+    text-align: center;
+  }
+
+  .hero img {
+    object-fit: contain;
+    height: 100%;
+  }
+
+  .sectionTests {
+    padding-top: 50px;
+  }
+}
