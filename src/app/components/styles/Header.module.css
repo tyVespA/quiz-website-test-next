@@ -33,7 +33,7 @@
   font-weight: 700;
 }
 
-.header ul {
+.header nav ul {
   list-style-type: none;
   padding-left: 0;
   display: flex;
@@ -46,6 +46,75 @@
   text-decoration-color: transparent;
   transition: all 0.3s;
 }
+
 .header a:hover {
   text-decoration-color: white;
+}
+
+.menuButtonsContainer {
+  display: none;
+  z-index: 10;
+}
+
+/* mobile */
+
+@media screen and (max-width: 770px) {
+  .header {
+    position: relative;
+  }
+
+  .menuButtonsContainer {
+    display: block;
+  }
+
+  .header button {
+    background-color: transparent;
+    border: transparent;
+    padding: 0;
+  }
+
+  .header svg {
+    fill: #fff;
+    transition: fill 0.3s;
+  }
+
+  .header svg:hover {
+    fill: var(--grey);
+  }
+
+  .header nav {
+    position: absolute;
+    /* adjust values based on project */
+    top: -30px;
+    right: -40px;
+    text-align: end;
+    /* z-index: -1; */
+    z-index: 5;
+    transition: all 0.3s;
+
+    background-color: var(--darkGrey);
+    width: 200px;
+    height: 100vh;
+  }
+
+  .header nav ul {
+    flex-direction: column;
+    gap: 15px;
+    position: absolute;
+    top: 100px;
+    right: 40px;
+  }
+
+  /* HELPER CLASSES */
+  .hidden {
+    display: none;
+  }
+
+  .offScreen {
+    transform: translateX(200px);
+  }
+
+  .onScreen {
+    transform: translateX(0);
+  }
 }
