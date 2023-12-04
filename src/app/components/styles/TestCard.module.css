@@ -10,15 +10,7 @@
 
 .imageContainer {
   height: 150px;
-  position: relative;
   overflow: hidden;
-}
-
-.imageContainer img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 .textContainer {
@@ -33,4 +25,10 @@
 .textContainer h3:hover,
 .textContainer a:hover {
   text-decoration: underline;
+}
+
+@media screen and (max-width: 325px) {
+  .imageContainer {
+    /* height: 100%; */
+  }
 }
