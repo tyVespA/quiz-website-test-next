@@ -131,3 +131,9 @@
   opacity: 1;
   z-index: 99;
 }
+
+@media screen and (max-width: 400px) {
+  .animatedDots {
+    max-width: 20ch;
+  }
+}
