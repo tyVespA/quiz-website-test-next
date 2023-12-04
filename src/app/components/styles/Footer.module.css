@@ -48,6 +48,22 @@
   transform: scale(0.75);
   transition: all 0.2s;
 }
+
 .footerContainer svg:hover {
   fill: var(--grey);
+}
+
+@media screen and (max-width: 635px) {
+  .footer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .footerTitle a {
+    display: flex;
+    flex-direction: column;
+  }
 }
